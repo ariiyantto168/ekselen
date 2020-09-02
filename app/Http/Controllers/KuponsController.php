@@ -85,4 +85,28 @@ class KuponsController extends Controller
         
         return view('masterpage', $pagemain);
     }
+
+    public function update_save(Request $request,Kupons $kupons)
+    {
+        $request->validate([
+            'name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+
+            $updateKupons = Kupons::find($kupons->idkupons);
+            $updateKupons->name = $request->name;
+            $updateKupons->start_date = $request->start_date;
+            $updateKupons->end_date = $request->end_date;
+            $updateKupons->save();
+            return redirect('kupons')->with('status_success','Update kupons');
+    }
+
+    public function delete(Kupons $kupons)
+    {
+        $deleteKupons = Kupons::find($kupons->idkupons);
+        $deleteKupons->delete();
+        return redirect('kupons')->with('status_success','Deleted kupons');
+
+    }
 }

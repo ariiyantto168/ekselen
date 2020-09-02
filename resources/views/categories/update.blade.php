@@ -55,7 +55,7 @@
         <h4 class="modal-title">Delete Categories</h4>
       </div>
       <div class="modal-body">
-        <p>Are you sure delete Categories??</p>
+        <p>Are you sure delete Categories ?</p>
       </div>
       <div class="modal-footer">
           {{Form::open(array('url' => 'categories/delete/'.$categories->idcategories,'method'=>'delete','class' => 'form-horizontal'))}}
