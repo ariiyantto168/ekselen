@@ -125,6 +125,7 @@
                     <ul class="treeview-menu">
                       <li id="submenu_users"><a href="{{url('users')}}"><i class="fa fa-users"></i> Users</a></li>
                       <li id="submenu_categories"><a href="{{url('categories')}}"><i class="fa fa-cubes"></i> Categories</a></li>
+                      <li id="submenu_instructors"><a href="{{url('instructors')}}"><i class="fa fa-mortar-board"></i> Instructors</a></li>
                     </ul>
                   </li>
                 {{-- all discount --}}
@@ -137,6 +138,7 @@
                   </a>
                   <ul class="treeview-menu">
                     <li id="submenu_kupons"><a href="{{url('kupons')}}"><i class="fa fa-ticket"></i> Kupon</a></li>
+                    <li id="submenu_diskons"><a href="{{url('diskons')}}"><i class="fa fa-tag"></i> Discounts</a></li>
                   </ul>
                 </li>
                 <li id="menu_testimonies"><a href="{{url('testimonies/')}}"><i class="fa fa-quote-left"></i> <span>Testimoni User</span></a></li>

@@ -44,5 +44,15 @@ Route::get('/testimonies/update/{testimonies}', 'TestimoniesController@update_pa
 Route::post('/testimonies/update/{testimonies}', 'TestimoniesController@update_save')->name('edit');
 Route::delete('/testimonies/delete/{testimonies}', 'TestimoniesController@delete')->name('delete');
 
+// discounts
+Route::get('/diskons', 'DiskonsController@index')->name('index');
+Route::get('/diskons/create-new', 'DiskonsController@create_page')->name('create_page');
+Route::post('/diskons/create-new', 'DiskonsController@save_page')->name('create_page');
+Route::get('/diskons/update/{diskons}', 'DiskonsController@update_page')->name('edit');
+Route::post('/diskons/update/{diskons}', 'DiskonsController@update_save')->name('edit');
 
 
+// Instructors
+Route::get('/instructors', 'InstructorsController@index')->name('index');
+Route::get('/instructors/create-new', 'InstructorsController@create_page')->name('create_page');
+Route::post('/instructors/create-new', 'InstructorsController@save_page')->name('create_page');
