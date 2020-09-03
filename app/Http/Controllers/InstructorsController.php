@@ -74,4 +74,9 @@ class InstructorsController extends Controller
         return redirect('instructors')->with('status_success','Created Insructors');
         
     }
+
+    public function update_page(Instructors $instructors)
+    {
+        
+    }
 }
