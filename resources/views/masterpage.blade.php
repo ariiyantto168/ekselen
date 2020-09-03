@@ -139,6 +139,7 @@
                     <li id="submenu_kupons"><a href="{{url('kupons')}}"><i class="fa fa-ticket"></i> Kupon</a></li>
                   </ul>
                 </li>
+                <li id="menu_testimonies"><a href="{{url('testimonies/')}}"><i class="fa fa-quote-left"></i> <span>Testimoni User</span></a></li>
               @endif
           </ul>
     </section>

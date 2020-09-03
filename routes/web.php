@@ -35,3 +35,14 @@ Route::post('/kupons/create-new', 'KuponsController@save_page')->name('create_pa
 Route::get('/kupons/update/{kupons}', 'KuponsController@update_page')->name('edit');
 Route::post('/kupons/update/{kupons}', 'KuponsController@update_save')->name('edit');
 Route::delete('/kupons/delete/{kupons}', 'KuponsController@delete')->name('delete');
+
+// Testimonies
+Route::get('/testimonies', 'TestimoniesController@index')->name('index');
+Route::get('/testimonies/create-new', 'TestimoniesController@create_page')->name('create_page');
+Route::post('/testimonies/create-new', 'TestimoniesController@save_page')->name('create_page');
+Route::get('/testimonies/update/{testimonies}', 'TestimoniesController@update_page')->name('edit');
+Route::post('/testimonies/update/{testimonies}', 'TestimoniesController@update_save')->name('edit');
+Route::delete('/testimonies/delete/{testimonies}', 'TestimoniesController@delete')->name('delete');
+
+
+
