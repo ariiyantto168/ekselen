@@ -21,11 +21,32 @@
             <tr>
                 <th>No</th>
                 <th>Name</th>
+                <th>Job Role</th>
+                <th>Images </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-
+            @foreach ($instructors as $number => $instructor)
+            <tr>
+                <td>{{$number+1}}</td>
+                <td>{{$instructor->name}}</td>
+                <td>{{$instructor->job_role}}</td>
+                <td>
+                    {{-- images dapet dr model function --}}
+                      @if (is_null($instructor->images))
+                        <label> - </label>
+                      @else
+                        <img class="img-rounded zoom" src="{{asset('images/instructors')}}/{{$instructor->images}}" width="50">
+                      @endif
+                </td>
+                <td>
+                    <center>
+                        <a href="{{url('/instructors/update/'.$instructor->idinstructors)}}"><i class="fa fa-pencil-square-o"></i></a>
+                    </center>
+                </td>
+            </tr>
+        @endforeach
         </tbody>
     </table>
 </div>

@@ -20,6 +20,7 @@
             <div class="box">
               <div class="box-header with-border">
                 <h3 class="box-title">Update Discounts</h3> 
+                <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#myModal">Delete</button>
               </div>
               <div class="box-body">
                 {{ Form::open(array('url' => 'diskons/update/'.$diskons->iddiskons, 'class' => 'form-horizontal', 'files' => 'true')) }}
@@ -104,8 +105,28 @@
           
           </section>
         </section>
-            {{-- <script type="text/javascript">
-            $(document).ready(function() {
-             $('.datepicker').datepicker();
-            });
-          </script> --}}
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete Diskon</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure delete Diskons ?</p>
+      </div>
+      <div class="modal-footer">
+          {{Form::open(array('url' => 'diskons/delete/'.$diskons->iddiskons,'method'=>'delete','class' => 'form-horizontal'))}}
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <input type="submit" class="btn btn-danger" value="Yes">
+        {{Form::close()}}
+      </div>
+    </div>
+    
+  </div>
+</div>
+

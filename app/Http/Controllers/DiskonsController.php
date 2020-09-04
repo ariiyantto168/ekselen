@@ -141,4 +141,13 @@ class DiskonsController extends Controller
         return redirect('diskons')->with('status_success','Updated Discounts');
 
     }
+
+    public function delete(Diskons $diskons)
+    {
+        $deleteDiskons = Diskons::find($diskons->iddiskons);
+        $image_old =  public_path('/images/diskons/' . $deleteDiskons->images);
+        File::delete($image_old);        
+        $deleteDiskons->delete();
+        return redirect('diskons')->with('status_success','Deleted Diskons');
+    }
 }

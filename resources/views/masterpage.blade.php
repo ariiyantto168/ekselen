@@ -139,6 +139,7 @@
                   <ul class="treeview-menu">
                     <li id="submenu_kupons"><a href="{{url('kupons')}}"><i class="fa fa-ticket"></i> Kupon</a></li>
                     <li id="submenu_diskons"><a href="{{url('diskons')}}"><i class="fa fa-tag"></i> Discounts</a></li>
+                    <li id="submenu_referals"><a href="{{url('referals')}}"><i class="fa fa-user-plus"></i> Referals</a></li>
                   </ul>
                 </li>
                 <li id="menu_testimonies"><a href="{{url('testimonies/')}}"><i class="fa fa-quote-left"></i> <span>Testimoni User</span></a></li>

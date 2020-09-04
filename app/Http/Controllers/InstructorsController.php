@@ -77,6 +77,60 @@ class InstructorsController extends Controller
 
     public function update_page(Instructors $instructors)
     {
+        $contents = [
+            'instructors' => Instructors::find($instructors->idinstructors)
+        ];
+
+        // return $content;
+
+        $pagecontent = view('instructors.update',$contents);
+
+        // masterpage
+        $pagemain = array(
+            'title' => 'Updated Information Instructors',
+            'menu' => 'instructors',
+            'submenu' => 'instructors',
+            'pagecontent' => $pagecontent
+        );
         
+        return view('masterpage', $pagemain);
     }
+
+    public function update_save(Request $request, Instructors $instructors)
+    {
+        $request->validate([
+            'name' => 'required',
+            'job_role' => 'required',
+        ]);
+
+
+        $updateInstructors = Instructors::find($instructors->idinstructors);
+        $updateInstructors->name = $request->name;
+        $updateInstructors->job_role = $request->job_role;
+
+        $image_old =  public_path('/images/instructors/' . $updateInstructors->images);
+        if ($request->hasFile('images')) {
+            if (File::exists($image_old)) {
+            $image = $request->file('images');
+            $re_image = Str::random(20).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300, 300)->save( public_path('/images/instructors/' . $re_image) );
+            $updateInstructors->images = $re_image;
+            }
+            File::delete($image_old);
+        }
+
+        $updateInstructors->save();
+        return redirect('instructors')->with('status_success','Updated Instructors');
+
+    }
+
+    public function delete(Instructors $instructors)
+    {
+        $deleteInstructors = Instructors::find($instructors->idinstructors);
+        $image_old =  public_path('/images/instructors/' . $deleteInstructors->images);
+        File::delete($image_old);        
+        $deleteInstructors->delete();
+        return redirect('instructors')->with('status_success','Deleted Instructors');
+    }
+  
 }

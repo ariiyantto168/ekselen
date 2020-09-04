@@ -50,9 +50,20 @@ Route::get('/diskons/create-new', 'DiskonsController@create_page')->name('create
 Route::post('/diskons/create-new', 'DiskonsController@save_page')->name('create_page');
 Route::get('/diskons/update/{diskons}', 'DiskonsController@update_page')->name('edit');
 Route::post('/diskons/update/{diskons}', 'DiskonsController@update_save')->name('edit');
+Route::delete('/diskons/delete/{diskons}', 'DiskonsController@delete')->name('delete');
 
+// Referal
+Route::get('/referals', 'ReferalsController@index')->name('index');
+Route::get('/referals/create-new', 'ReferalsController@create_page')->name('create_page');
+Route::post('/referals/create-new', 'ReferalsController@save_page')->name('create_page');
+Route::get('/referals/update/{referals}', 'ReferalsController@update_page')->name('edit');
+Route::post('/referals/update/{referals}', 'ReferalsController@update_save')->name('edit');
+Route::delete('/referals/delete/{referals}', 'ReferalsController@delete')->name('edit');
 
 // Instructors
 Route::get('/instructors', 'InstructorsController@index')->name('index');
 Route::get('/instructors/create-new', 'InstructorsController@create_page')->name('create_page');
 Route::post('/instructors/create-new', 'InstructorsController@save_page')->name('create_page');
+Route::get('/instructors/update/{instructors}', 'InstructorsController@update_page')->name('edit');
+Route::post('/instructors/update/{instructors}', 'InstructorsController@update_save')->name('edit');
+Route::delete('/instructors/delete/{instructors}', 'InstructorsController@delete')->name('delete');
