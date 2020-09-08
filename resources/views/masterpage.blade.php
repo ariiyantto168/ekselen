@@ -142,6 +142,18 @@
                     <li id="submenu_referals"><a href="{{url('referals')}}"><i class="fa fa-user-plus"></i> Referals</a></li>
                   </ul>
                 </li>
+                <li class="treeview" id="menu_class">
+                  <a href="#">
+                    <i class="fa fa-university"></i> <span>class</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span> 
+                  </a>
+                  <ul class="treeview-menu">
+                    <li id="submenu_classes"><a href="{{url('classes')}}"><i class="fa fa-archive"></i> Class</a></li>
+                   
+                  </ul>
+                </li>
                 <li id="menu_testimonies"><a href="{{url('testimonies/')}}"><i class="fa fa-quote-left"></i> <span>Testimoni User</span></a></li>
               @endif
           </ul>

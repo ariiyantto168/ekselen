@@ -67,3 +67,11 @@ Route::post('/instructors/create-new', 'InstructorsController@save_page')->name(
 Route::get('/instructors/update/{instructors}', 'InstructorsController@update_page')->name('edit');
 Route::post('/instructors/update/{instructors}', 'InstructorsController@update_save')->name('edit');
 Route::delete('/instructors/delete/{instructors}', 'InstructorsController@delete')->name('delete');
+
+// class 
+Route::get('/classes', 'ClassController@index')->name('index');
+Route::get('/classes/create-new', 'ClassController@create_page')->name('create_page');
+Route::post('/classes/create-new', 'ClassController@save_page')->name('create_page');
+Route::get('/classes/update/{classes}', 'ClassController@update_page')->name('edit');
+Route::post('/classes/update/{classes}', 'ClassController@update_save')->name('edit');
+Route::delete('/classes/delete/{classes}', 'ClassController@delete')->name('delete');
