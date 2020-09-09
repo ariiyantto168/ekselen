@@ -24,5 +24,9 @@ class Classes extends Model
     }
 
 
+    public function classes_details()
+    {
+        return $this->hasMany('App\Models\ClassesDetails','idclass');
+    }
 
 }

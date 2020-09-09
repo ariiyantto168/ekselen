@@ -15,7 +15,7 @@ class CreateSubclassTable extends Migration
     {
         Schema::create('subclass', function (Blueprint $table) {
             $table->increments('idsubclass');
-            $table->string('name');
+            $table->string('namemateri');
             $table->softDeletes();
             $table->timestamps();
         });

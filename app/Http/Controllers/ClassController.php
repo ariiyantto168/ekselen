@@ -6,6 +6,7 @@ use Auth;
 use Image;
 use File;
 use App\Models\Classes;
+use App\Models\Subclass;
 use App\Models\Categories;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -74,7 +75,17 @@ class ClassController extends Controller
             Image::make($image)->resize(300, 300)->save( public_path('/images/class/images/' . $re_image) );
             $saveClasses->images = $re_image;
         }
+        return $saveClasses;
         $saveClasses->save();
+
+        // save subclass
+        // $saveSubclass = new Subclass;
+        // $saveSubclass->idclass = $saveClasses->idclass;
+        // $saveSubclass->namemateri = $request->namemateri;
+        // return $saveSubclass;
+        // $saveSubclass->save();
+
+
         return redirect('classes')->with('status_success','Created Class');
 
 

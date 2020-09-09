@@ -71,45 +71,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Bab Materi Kelas</label>
-                <input type="text" class="form-control" placeholder="Name" name="name" required>
+                <input type="text" class="form-control" placeholder="Name" name="namemateri" required>
               </div>
             </div>
-            {{-- content video --}}
-        
-            <div class="form-group">
-              <div class="col-sm-7 col-sm-offset-1">
-                <div class="table-responsive">
-                  <table class="table table-bordered " style="border: 2px solid #d2d6de !important;" id="table">
-                    <tbody>
-                      <tr>
-                        <td style="border: 1px solid #d2d6de !important; text-align:center ">
-                          <label>1</label>
-                        </td>
-                        <td  style="border: 2px solid #d2d6de !important; width: auto; ">
-                          <small><strong>Quantity</strong></small>
-                          <input type="number" name="quantity[]" class="form-control"  id="quantity_1">
-                        </td>
-                        <td  style="border: 2px solid #d2d6de !important; width: auto; ">
-                          <small><strong>Quantity</strong></small>
-                          <input type="number" name="quantity[]" class="form-control"  id="quantity_1">
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-
           </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
-          the plugin.
-        </div>
-      </div>
+
+
+
                 <div class="form-group">
                   <label class="col-sm-2 control-label"></label>
                   <div class="col-sm-5">

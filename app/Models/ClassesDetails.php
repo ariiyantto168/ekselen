@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class subclass extends Model
+class ClassesDetails extends Model
 {
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
 
-    protected $table = 'subclass';
-    protected $primaryKey = 'subclass';
-    protected $fillable = [
-        'name'
-    ];
+    protected $table = 'classes_details';
+    protected $primaryKey = 'idclassesdetails';
 
-    
+
 }
-
