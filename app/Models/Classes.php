@@ -18,4 +18,11 @@ class Classes extends Model
         'name','image'
     ];
 
+    public function categories()
+    {
+        return $this->belongsTo('App\Models\Categories', 'idcategories');
+    }
+
+
+
 }

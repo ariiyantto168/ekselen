@@ -18,4 +18,9 @@ class Categories extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function classes()
+    {
+      return $this->hasMany('App\Models\Classes', 'idcategories');
+    }
 }

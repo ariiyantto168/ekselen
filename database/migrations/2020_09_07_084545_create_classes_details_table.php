@@ -14,7 +14,9 @@ class CreateClassesDetailsTable extends Migration
     public function up()
     {
         Schema::create('classes_details', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idclassesdetails');
+            $table->integer('idsubclass');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

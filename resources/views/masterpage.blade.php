@@ -10,12 +10,16 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
         <!-- Font Awesome -->
-      <!--   <link rel="stylesheet" href="{{asset('/adminLTE/css/font-awesome.min.css')}}">
-       -->
+      {{-- <link rel="stylesheet" href="{{asset('/adminLTE/css/font-awesome.min.css')}}"> --}}
+  
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        <!-- Ionicons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css">
         <!-- jvectormap -->
+
+        {{-- select2 --}}
+          <!-- Select2 -->
+        <link rel="stylesheet" href="{{ asset('adminlte/bower_components/select2/dist/css/select2.min.css')}}">
       
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.4/jquery-jvectormap.min.css">
         <!-- Theme style -->
@@ -238,6 +242,10 @@
 <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 
+{{-- select2 --}}
+<!-- Select2 -->
+<script src="{{ asset('adminlte/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
 
@@ -245,6 +253,9 @@
 <script src="{{ asset('adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 <script>
+  //Initialize Select2 Elements
+  $('.select2').select2()
+  
   $('#menu_{{$menu}}').addClass('active');
   $('#submenu_{{$submenu}}').addClass('active');
   $(function () {

@@ -6,6 +6,7 @@ use Auth;
 use Image;
 use File;
 use App\Models\Classes;
+use App\Models\Categories;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class ClassController extends Controller
     public function index()
     {
         $contents = [
-            'classes' => Classes::all(),
+            'classes' => Classes::with('categories')->get(),
         ];
 
         $pagecontent = view('class.index',$contents ); // unuk menampilkan view categories dr view
@@ -38,7 +39,11 @@ class ClassController extends Controller
 
     public function create_page()
     {
-      $pagecontent = view('class.create');
+        $contents = [
+            'categories' => Categories::all(),
+        ];
+
+      $pagecontent = view('class.create', $contents);
   
       //masterpage
       $pagemain = array(
@@ -60,6 +65,8 @@ class ClassController extends Controller
 
         $saveClasses = new Classes;
         $saveClasses->name = $request->name;
+        $saveClasses->idcategories = $request->idcategories;
+
 
         if ($request->hasFile('images')) {
             $image = $request->file('images');
@@ -76,7 +83,8 @@ class ClassController extends Controller
     public function update_page(Classes $classes)
     {
         $contents = [
-            'classes' => Classes::find($classes->idclass)
+            'classes' => Classes::find($classes->idclass),
+            'categories' => Categories::all(),
         ];
 
         // return $content;
@@ -103,6 +111,8 @@ class ClassController extends Controller
 
         $updateClasses = Classes::find($classes->idclass);
         $updateClasses->name = $request->name;
+        $updateClasses->idcategories = $request->idcategories;
+
         
         $image_old =  public_path('/images/class/images/' . $updateClasses->images);
         if ($request->hasFile('images')) {

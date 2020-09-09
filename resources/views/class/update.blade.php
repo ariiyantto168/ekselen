@@ -33,6 +33,20 @@
                 </div>
 
                 <div class="form-group">
+                  <label class="col-sm-2 control-label">Category</label>
+                  <div class="col-sm-5">
+                    <select class="form-control" name="idcategories">
+                      <option value="">-- select categories -- </option>
+                      @foreach ($categories as $cat)
+                        <option value="{{$cat->idcategories}}" @if ($cat->idcategories == $classes->idcategories)
+                          selected
+                        @endif>{{$cat->name}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
                   <label class="col-sm-2 control-label">Images<span class="required">*</span>
                   </label>
                   <div class="col-sm-5">
