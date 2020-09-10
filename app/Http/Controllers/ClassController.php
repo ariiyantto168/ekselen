@@ -22,7 +22,7 @@ class ClassController extends Controller
     public function index()
     {
         $contents = [
-            'classes' => Classes::with('categories')->get(),
+            'classes' => Classes::with('categories','subclass')->get(),
         ];
 
         $pagecontent = view('class.index',$contents ); // unuk menampilkan view categories dr view
@@ -59,6 +59,7 @@ class ClassController extends Controller
 
     public function save_page(Request $request)
     {
+        // return $request->all();
         $request->validate([
             'name' => 'required',
         ]);
@@ -75,8 +76,14 @@ class ClassController extends Controller
             Image::make($image)->resize(300, 300)->save( public_path('/images/class/images/' . $re_image) );
             $saveClasses->images = $re_image;
         }
-        return $saveClasses;
+        // return $saveClasses;
         $saveClasses->save();
+
+        $saveSubclass = new Subclass;
+        $saveSubclass->idclass = $saveClasses->namemateri;
+        return $saveSubclass;
+        $saveSubclass->save();
+
 
         return redirect('classes')->with('status_success','Created Class');
 
