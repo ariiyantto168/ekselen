@@ -78,15 +78,8 @@ class ClassController extends Controller
         return $saveClasses;
         $saveClasses->save();
 
-        // save subclass
-        // $saveSubclass = new Subclass;
-        // $saveSubclass->idclass = $saveClasses->idclass;
-        // $saveSubclass->namemateri = $request->namemateri;
-        // return $saveSubclass;
-        // $saveSubclass->save();
-
-
         return redirect('classes')->with('status_success','Created Class');
+
 
 
     }
