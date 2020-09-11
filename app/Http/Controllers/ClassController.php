@@ -25,6 +25,8 @@ class ClassController extends Controller
             'classes' => Classes::with('categories','subclass')->get(),
         ];
 
+        // return $contents;
+
         $pagecontent = view('class.index',$contents ); // unuk menampilkan view categories dr view
 
         // masterpage
@@ -42,7 +44,10 @@ class ClassController extends Controller
     {
         $contents = [
             'categories' => Categories::all(),
+            'subclass' => Subclass::all(),
         ];
+
+        // return $contents;
 
       $pagecontent = view('class.create', $contents);
   
@@ -64,11 +69,9 @@ class ClassController extends Controller
             'name' => 'required',
         ]);
 
-
         $saveClasses = new Classes;
         $saveClasses->name = $request->name;
         $saveClasses->idcategories = $request->idcategories;
-
 
         if ($request->hasFile('images')) {
             $image = $request->file('images');
@@ -79,26 +82,32 @@ class ClassController extends Controller
         // return $saveClasses;
         $saveClasses->save();
 
+
         $saveSubclass = new Subclass;
-        $saveSubclass->idclass = $saveClasses->namemateri;
-        return $saveSubclass;
+        $saveSubclass->idclass = $saveClasses->idclass;
+        $saveSubclass->namemateri = $request->namemateri;
+        // return $saveSubclass;
         $saveSubclass->save();
 
-
         return redirect('classes')->with('status_success','Created Class');
-
-
 
     }
 
     public function update_page(Classes $classes)
     {
+
+        $categories = Categories::all();
+        // $class = Classes::find($classes->idclass);
+        $class = Classes::with(['subclass'])
+                 ->where('idclass',$classes->idclass)
+                 ->first();
+
         $contents = [
-            'classes' => Classes::find($classes->idclass),
-            'categories' => Categories::all(),
+            'classes' => $class,
+            'categories' => $categories,
         ];
 
-        // return $content;
+        // return $contents;
 
         $pagecontent = view('class.update',$contents);
 
@@ -137,6 +146,15 @@ class ClassController extends Controller
         }
         // return $saveTestimonies;
         $updateClasses->save();
+
+        // $saveSubclass = Subclass::find($subclass->idsubclass);
+        // $saveSubclass->idclass = $saveClasses->idclass;
+
+        $saveSubclass = Subclass::where('idclass',$classes->idclass)->first();
+        $saveSubclass->namemateri = $request->namemateri;
+        // return $saveSubclass;
+        $saveSubclass->save();
+
         return redirect('classes')->with('status_success','Updated Class');
 
     }

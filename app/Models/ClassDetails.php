@@ -14,4 +14,5 @@ class ClassDetails extends Model
     protected $table = 'class_details';
     protected $primaryKey = 'idclassdetails';
     
+    
 }

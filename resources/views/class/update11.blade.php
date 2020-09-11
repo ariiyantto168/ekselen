@@ -1,13 +1,12 @@
 <section class="content-header">
     <h1>
         class
-        <small></small>
+        <small>update class</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{url('/home')}}"><i class="fa fa-dashboard"></i>Home</a>
-        <li class="active"><i class="fa fa-database"></i>Mater</a>
-        <li><a href="{{url('/class')}}"><i class="fa fa-cubes"></i>Class</a>
-        <li class="active"><i class="fa fa-plus"></i>Create New</a>
+        <li><a href="{{url('/classes')}}"><i class="fa fa-cubes"></i>Class</a>
+        <li class="active"><i class="fa fa-plus"></i>Update</a>
     </ol>
 </section>
 
@@ -16,11 +15,11 @@
 
     <!-- {{-- default box --}} -->
     <section class="content">
-
             <!-- Default box -->
-            <div class="box box-primary">
+            <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Create New</h3> 
+                <h3 class="box-title"> Update</h3> 
+                <button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#myModal">Delete</button>
               </div>
               <div class="box-body">
                 {{ Form::open(array('url' => 'classes/update/'.$classes->idclass, 'class' => 'form-horizontal', 'files' => 'true')) }}
@@ -57,30 +56,7 @@
                   </div>
               </div>
 
-              </div>
-                    <!-- SELECT2 EXAMPLE -->
-      <div class="box box-primary">
-        <div class="box-header with-border">
-          <h3 class="box-title">Upload Materi</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
-          </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Bab Materi Kelas</label>
-                <input type="text" class="form-control" value="{{$classes->subclass->namemateri}}" name="namemateri" required>
-              </div>
-            </div>
-          </div>
-
-
-
+                <hr>
                 <div class="form-group">
                   <label class="col-sm-2 control-label"></label>
                   <div class="col-sm-5">
@@ -89,11 +65,33 @@
                   </div>
                 </div>
                 {{ Form::close() }}
-              {{-- </div> --}}
+              </div>
               <!-- /.box-body -->
             </div>
             <!-- /.box -->
           
           </section>
         </section>
-
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete Diskon</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure delete Class ?</p>
+      </div>
+      <div class="modal-footer">
+          {{Form::open(array('url' => 'classes/delete/'.$classes->idclass,'method'=>'delete','class' => 'form-horizontal'))}}
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <input type="submit" class="btn btn-danger" value="Yes">
+        {{Form::close()}}
+      </div>
+    </div>
+    
+  </div>
+</div>

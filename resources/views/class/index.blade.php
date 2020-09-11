@@ -22,6 +22,7 @@
                 <th>No</th>
                 <th>Name</th>
                 <th>Categories</th>
+                <th>Subclass</th>
                 <th>Images</th>
                 <th></th>
             </tr>
@@ -32,6 +33,7 @@
                 <td>{{$number+1}}</td>
                 <td>{{$class->name}}</td>
                 <td>{{$class->categories->name}}</td>
+                <td>{{$class->subclass->namemateri}}</td>
                 <td>
                     {{-- images dapet dr model function --}}
                       @if (is_null($class->images))

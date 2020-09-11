@@ -23,14 +23,10 @@ class Classes extends Model
         return $this->belongsTo('App\Models\Categories', 'idcategories');
     }
 
-
-    public function classes_details()
+    public function subclass()
     {
-        return $this->hasMany('App\Models\ClassesDetails','idclass');
+        return $this->hasOne('App\Models\Subclass','idclass');
     }
-
-    
-
     
 
 }
