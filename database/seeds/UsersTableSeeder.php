@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
        foreach ($roles as $role) {
          $save_user = new User;
          if ($role == 'a') {
-           $save_user->name = 'Admin';
+           $save_user->name = 'Super Admin';
            $save_user->email ='root@root.com';
            $save_user->password =  bcrypt('rootroot');
         }elseif($role == 'u') {

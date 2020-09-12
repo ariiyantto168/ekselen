@@ -65,6 +65,9 @@
             <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
           </div>
         </div>
+        
+        <a class="pull-left btn btn-primary btn-xs" id="addRow"> <i class="fa fa-plus"></i> Add</a>
+        <br>
         <!-- /.box-header -->
         <div class="box-body">
           <div class="row">
