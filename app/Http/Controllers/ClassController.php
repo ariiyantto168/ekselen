@@ -25,7 +25,7 @@ class ClassController extends Controller
             'classes' => Classes::with('categories','subclass')->get(),
         ];
 
-        // return $contents;
+        return $contents;
 
         $pagecontent = view('class.index',$contents ); // unuk menampilkan view categories dr view
 

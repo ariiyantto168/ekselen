@@ -75,3 +75,9 @@ Route::post('/classes/create-new', 'ClassController@save_page')->name('create_pa
 Route::get('/classes/update/{classes}', 'ClassController@update_page')->name('edit');
 Route::post('/classes/update/{classes}', 'ClassController@update_save')->name('edit');
 Route::delete('/classes/delete/{classes}', 'ClassController@delete')->name('delete');
+
+// Highlights
+Route::get('/highlights', 'HighlightsController@index')->name('index');
+Route::get('/highlights/create-new', 'HighlightsController@create_page')->name('create_page');
+Route::post('/highlights/create-new', 'HighlightsController@save_page')->name('create_page');
+Route::get('/highlights/update/{highlights}', 'HighlightsController@update_page')->name('edit');

@@ -154,8 +154,8 @@
                     </span> 
                   </a>
                   <ul class="treeview-menu">
-                    <li id="submenu_classes"><a href="{{url('classes')}}"><i class="fa fa-archive"></i> Class</a></li>
-                   
+                    <li id="submenu_classes"><a href="{{url('classes')}}"><i class="fa fa-building"></i> Class</a></li>
+                    <li id="submenu_highlights"><a href="{{url('highlights')}}"><i class="fa fa-clone"></i> Highlights</a></li>
                   </ul>
                 </li>
                 <li id="menu_testimonies"><a href="{{url('testimonies/')}}"><i class="fa fa-quote-left"></i> <span>Testimoni User</span></a></li>
